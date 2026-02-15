@@ -1,0 +1,468 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PBL Presentation | 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+        body { background-color: #020617; color: #f8fafc; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .gradient-text { background: linear-gradient(90deg, #60a5fa, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* TIMER UI - FIXED CONTRAST */
+        #timerContainer { background: #ffffff; color: #020617; box-shadow: 0 10px 40px rgba(0,0,0,0.8); border: 3px solid #3b82f6; z-index: 1000; }
+        @keyframes flicker { 0%, 100% { background-color: #ffffff; } 50% { background-color: #fca5a5; } }
+        .timer-warning { animation: flicker 1s infinite; border: 3px solid #ef4444 !important; color: #b91c1c !important; }
+        .timer-stop { background-color: #991b1b !important; color: #ffffff !important; border: 3px solid #f87171 !important; animation: none; }
+    </style>
+</head>
+<body onload="startTimer()">
+
+    <div id="timerContainer" class="fixed bottom-10 right-10 px-8 py-4 rounded-3xl flex items-center gap-4 transition-all">
+        <i class="fas fa-hourglass-start text-blue-600 text-2xl" id="timerIcon"></i>
+        <span id="displayTime" class="text-4xl font-black font-mono tracking-tighter">00:00</span>
+    </div>
+
+    <nav class="fixed w-full z-50 glass border-b border-slate-800/50 px-8 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-4">
+            <div class="bg-white p-1 rounded flex items-center justify-center shadow-md" style="height: 48px; width: 48px;">
+                <img src="mujlogo.jpg" alt="MUJ" class="h-full w-auto object-contain" onerror="this.src='https://via.placeholder.com/50?text=MUJ'">
+            </div>
+            <div class="flex flex-col text-left">
+                <span class="text-xl font-black text-white leading-none uppercase tracking-tighter">PBL <span class="text-blue-500 italic">2026</span></span>
+                <span class="text-[9px] text-slate-400 font-bold uppercase tracking-widest mt-1">Dept. of Computer Science & Engineering</span>
+            </div>
+        </div>
+        <div class="hidden md:flex gap-8 text-[11px] uppercase tracking-widest font-bold opacity-70">
+            <a href="#problem" class="hover:text-blue-400 transition">Problem</a>
+            <a href="#methodology" class="hover:text-blue-400 transition">Methodology</a>
+            <a href="#results" class="hover:text-blue-400 transition">Results</a>
+            <a href="#team" class="hover:text-blue-400 transition">Team</a>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-6 pt-48 pb-32 space-y-32">
+        
+        <section class="text-center">
+            <div class="inline-block px-4 py-1 border border-slate-800 rounded-full text-slate-500 text-[10px] font-mono mb-6 uppercase tracking-widest">ID: 2427030381</div>
+            <h1 class="text-6xl md:text-7xl font-extrabold mb-8 uppercase leading-tight"><span class="gradient-text uppercase">Predict ovarian cancer using clinical biomarkers + medical images via AI-ML for early detection</span></h1>
+            <p class="text-slate-400 max-w-2xl mx-auto italic text-lg leading-relaxed border-l-2 border-blue-500/30 pl-6 text-left">
+                "Early detection of ovarian cancer can be significantly improved by integrating clinical biomarker data (such as CA-125 levels, age, family history, and hormonal factors) with medical imaging features (ultrasound/CT/MRI) using AI-ML models. 
+            A multimodal machine learning approach that learns patterns jointly from structured clinical parameters and image-based tumor characteristics will achieve higher prediction accuracy, sensitivity, and earlier risk identification compared to models relying on a single data source."
+            </p>
+        </section>
+
+        <section id="problem" class="grid md:grid-cols-2 gap-12 items-stretch">
+            <div class="glass p-10 rounded-[2.5rem] flex flex-col justify-center border-l-4 border-blue-600">
+                <h2 class="text-3xl font-extrabold mb-6">Problem Statement</h2>
+                <p class="text-slate-400 leading-relaxed text-justify">Ovarian cancer (OC), the seventh most common cancer in women and the most lethal gynecological malignancy, is a major global health challenge, with over 324,000 new cases and more than 200,000 deaths reported each year. 
+                    It is often diagnosed at a late stage because early symptoms are vague and difficult to detect. While clinical biomarkers and medical imaging are used for diagnosis, each method alone has limitations in accuracy and early-stage identification.
+
+Although significant research already exists on ovarian cancer detection using AI and medical data, many studies focus on a single type of input, such as only biomarkers or only imaging. 
+This project aims to build a multimodal AI-ML model that combines both clinical biomarker data and medical images to improve prediction accuracy and support earlier, more reliable detection.</p>
+            </div>
+            <div class="space-y-6">
+                <div class="glass p-7 rounded-3xl border-r-4 border-blue-500/50">
+                    <h3 class="text-blue-400 font-bold text-xs uppercase tracking-widest mb-2">Literature Review / Market Research</h3>
+                    <p class="text-sm text-slate-500 italic">Several research studies have explored the use of AI and machine learning for ovarian cancer prediction and diagnosis using clinical biomarkers and imaging data.
+                        <ol>
+                                <li>Zhang et al., 2020: Compared machine learning models such as Random Forest and XGBoost using biomarker data for ovarian cancer prediction and found improved accuracy over traditional statistical methods.</li>
+
+                                <li>Nunes et al., 2021: Integrated clinical and imaging data using deep learning techniques to support diagnosis, showing that combining multiple data types improves performance.</li>
+
+                                <li>Liu et al., 2019: Highlighted the importance of key biomarkers like CA-125, HE4, and other clinical factors in improving ML-based prediction models.</li>
+
+                                <li>Boehm et al., 2022: Developed a multimodal ML approach for risk stratification and used feature importance and image heatmaps to improve interpretability of predictions.</li>
+                        </ol>
+                    </p>
+                </div>
+                <div class="glass p-7 rounded-3xl border-r-4 border-purple-500/50">
+                    <h3 class="text-purple-400 font-bold text-xs uppercase tracking-widest mb-2">Research Gap / Innovation</h3>
+                    <p class="text-sm text-slate-500 italic">While several studies have already combined clinical biomarkers and medical imaging using advanced AI models, most existing approaches rely on highly complex datasets, 
+                        expensive imaging techniques, or research-level deep learning systems that are difficult to implement in real clinical settings. Many models are trained on limited or specialized populations and are not designed for simple, scalable deployment.
+The innovation in this project lies in developing a practical and accessible multimodal AI-ML model that uses commonly available biomarkers (such as CA-125, HE4, and basic clinical factors) along with standard medical images to support early detection. 
+Instead of focusing only on achieving high accuracy in controlled research environments, this approach emphasizes simplicity, interpretability, and potential real-world usability. 
+The project also aims to compare multiple ML techniques and highlight important features contributing to prediction, making the system more transparent and supportive for clinical decision-making.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="methodology" class="space-y-12">
+            <h2 class="text-4xl font-black text-center uppercase tracking-tight">System <span class="text-blue-500">Methodology</span></h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-3xl text-center">
+                    <i class="fas fa-database text-blue-500 text-3xl mb-4"></i>
+                    <h3 class="font-bold mb-2 uppercase text-xs tracking-widest">Dataset / Input</h3>
+                    <p class="text-sm text-slate-500">This project uses publicly available datasets from Kaggle containing clinical biomarker data and histopathology images for ovarian cancer detection.
+
+                    Sources:
+                    Ovarian Cancer Biomarker Dataset (clinical parameters)
+                    Ovarian Cancer Histopathology Image Dataset
+                    Data Files Used:
+                    Supplementary Data 1: Original raw dataset
+                    Supplementary Data 2: List of biomarkers with abbreviations and descriptions
+                    Supplementary Data 3: Imputed training data (without CA72-4 biomarker)
+                    Supplementary Data 4: Raw training data
+                    Supplementary Data 5: Raw test data
+                    Target Column:
+                    TYPE
+                    1 → BOT (Benign Ovarian Tumor)
+                    0 → OC (Ovarian Cancer)
+                    Dataset Size:
+                    Includes multiple patient samples with clinical biomarker readings and labeled histopathology images categorized as benign or malignant.
+                    Preprocessing Steps:
+                    Handling missing values using imputation (as provided in Supplementary Data 3)
+                    Normalization of biomarker values
+                    Feature selection (e.g., CA-125, HE4, clinical indicators)
+                    Image resizing and scaling for model compatibility
+                    Splitting into training and testing datasets</p>
+                </div>
+                <div class="glass p-8 rounded-3xl text-center">
+                    <i class="fas fa-microchip text-purple-500 text-3xl mb-4"></i>
+                    <h3 class="font-bold mb-2 uppercase text-xs tracking-widest">Model / Architecture</h3>
+                    <p class="text-sm text-slate-500">[Algorithms used or System Workflow]A multimodal AI-ML workflow is used to combine clinical data and image-based inputs.
+
+                    For Biomarker Data:
+                    Algorithms: Random Forest, XGBoost, and Logistic Regression
+                    Purpose: Predict cancer risk based on clinical parameters
+                    For Medical Images:
+                    Convolutional Neural Network (CNN) for feature extraction and classification
+                    System Workflow:
+                    Input clinical biomarker values and histopathology images
+                    Preprocess data (cleaning, normalization, resizing images)
+                    Train ML models on biomarker data
+                    Train CNN on image dat
+                    Combine outputs for final prediction
+                    Classify result as OC (0) or BOT (1)</p>
+                </div>
+                <div class="glass p-8 rounded-3xl text-center border-2 border-green-500/20 bg-green-500/5">
+                    <i class="fab fa-python text-green-500 text-3xl mb-4"></i>
+                    <h3 class="font-bold mb-4 uppercase text-xs tracking-widest text-green-400">Live Execution</h3>
+                    <a href="https://colab.research.google.com/drive/1tjAdlFGfou_mN24wGO4KInPLS787zM-8?usp=sharing" target="_blank" class="px-6 py-2 bg-green-600 rounded-full text-[10px] font-black hover:bg-green-500 transition shadow-lg shadow-green-900/40">VIEW CODE / DEMO</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="results" class="glass p-12 rounded-[3.5rem] border-t-4 border-blue-500">
+            <h2 class="text-3xl font-black mb-12 text-center uppercase tracking-tight">Results & <span class="text-blue-500">Analysis</span></h2>
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="h-80"><canvas id="resultsChart"></canvas></div>
+                <div class="space-y-6">
+                    <div class="p-6 rounded-2xl bg-white/5 flex justify-between items-center border border-white/10 shadow-inner">
+                        <span class="text-slate-400 font-bold uppercase text-xs tracking-widest">Accuracy / Performance</span>
+                        <span class="text-blue-400 font-mono font-black text-3xl">XX.X%</span>
+                    </div>
+                    <p class="text-slate-500 text-sm italic text-justify leading-relaxed">Quantifiable outcomes and evaluation metrics compared to baselines.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="text-center pt-10 border-t border-slate-900">
+            <h2 class="text-[10px] font-black text-slate-600 uppercase tracking-[0.5em] mb-12">Academic Credits</h2>
+            <div class="flex flex-wrap justify-center gap-10">
+                <div class="glass px-12 py-8 rounded-[2rem] border-b-4 border-blue-600">
+                    <p class="text-[9px] font-bold text-blue-500 mb-2 uppercase tracking-widest">Project Guide</p>
+                    <p class="font-black text-xl text-slate-100">Dr. Jay Prakash Singh</p>
+                </div>
+                <div class="glass px-12 py-8 rounded-[2rem] border-b-4 border-slate-700">
+                    <p class="text-[9px] font-bold text-slate-400 mb-2 uppercase tracking-widest">Team Member</p>
+                    <p class="font-black text-xl text-slate-100">Ananya Kawatra</p>
+                    <p class="text-[10px] text-slate-500 mt-1">2427030381</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 text-center bg-black/40 border-t border-slate-900">
+        <p class="text-slate-600 text-[10px] font-bold tracking-[0.3em] uppercase mb-2">Manipal University Jaipur</p>
+        <p class="text-slate-500 text-[9px] font-medium tracking-[0.2em] uppercase opacity-50">Department of Computer Science & Engineering • 2026</p>
+    </footer>
+
+    <script>
+        // TIMER LOGIC
+        let sec = 0;
+        let timer = null;
+        function startTimer() {
+            timer = setInterval(() => {
+                sec++;
+                let m = Math.floor(sec / 60);
+                let s = sec % 60;
+                document.getElementById('displayTime').innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+                
+                if (sec >= 480 && sec < 600) { // 8-10 Mins Warning
+                    document.getElementById('timerContainer').classList.add('timer-warning');
+                    document.getElementById('timerIcon').classList.replace('fa-hourglass-start', 'fa-hourglass-half');
+                } else if (sec >= 600) { // 10 Mins Stop
+                    clearInterval(timer);
+                    document.getElementById('timerContainer').classList.replace('timer-warning', 'timer-stop');
+                    document.getElementById('displayTime').innerText = "10:00";
+                    document.getElementById('timerIcon').classList.replace('fa-hourglass-half', 'fa-hourglass-end');
+                }
+            }, 1000);
+        }
+
+        // RESULTS CHART (Demo Data)
+        const ctx = document.getElementById('resultsChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Existing System', 'Our Solution'],
+                datasets: [{
+                    data: [70, 92],
+                    backgroundColor: ['#1e293b', '#3b82f6'],
+                    borderRadius: 15,
+                    barThickness: 50
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: { 
+                    y: { beginAtZero: true, grid: { color: '#ffffff05' }, ticks: { color: '#475569' } },
+                    x: { grid: { display: false }, ticks: { color: '#475569' } }
+                }
+            }
+        });
+    </script>
+</body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PBL Presentation | 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+        body { background-color: #020617; color: #f8fafc; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .gradient-text { background: linear-gradient(90deg, #60a5fa, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* TIMER UI - FIXED CONTRAST */
+        #timerContainer { background: #ffffff; color: #020617; box-shadow: 0 10px 40px rgba(0,0,0,0.8); border: 3px solid #3b82f6; z-index: 1000; }
+        @keyframes flicker { 0%, 100% { background-color: #ffffff; } 50% { background-color: #fca5a5; } }
+        .timer-warning { animation: flicker 1s infinite; border: 3px solid #ef4444 !important; color: #b91c1c !important; }
+        .timer-stop { background-color: #991b1b !important; color: #ffffff !important; border: 3px solid #f87171 !important; animation: none; }
+    </style>
+</head>
+<body onload="startTimer()">
+
+    <div id="timerContainer" class="fixed bottom-10 right-10 px-8 py-4 rounded-3xl flex items-center gap-4 transition-all">
+        <i class="fas fa-hourglass-start text-blue-600 text-2xl" id="timerIcon"></i>
+        <span id="displayTime" class="text-4xl font-black font-mono tracking-tighter">00:00</span>
+    </div>
+
+    <nav class="fixed w-full z-50 glass border-b border-slate-800/50 px-8 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-4">
+            <div class="bg-white p-1 rounded flex items-center justify-center shadow-md" style="height: 48px; width: 48px;">
+                <img src="mujlogo.jpg" alt="MUJ" class="h-full w-auto object-contain" onerror="this.src='https://via.placeholder.com/50?text=MUJ'">
+            </div>
+            <div class="flex flex-col text-left">
+                <span class="text-xl font-black text-white leading-none uppercase tracking-tighter">PBL <span class="text-blue-500 italic">2026</span></span>
+                <span class="text-[9px] text-slate-400 font-bold uppercase tracking-widest mt-1">Dept. of Computer Science & Engineering</span>
+            </div>
+        </div>
+        <div class="hidden md:flex gap-8 text-[11px] uppercase tracking-widest font-bold opacity-70">
+            <a href="#problem" class="hover:text-blue-400 transition">Problem</a>
+            <a href="#methodology" class="hover:text-blue-400 transition">Methodology</a>
+            <a href="#results" class="hover:text-blue-400 transition">Results</a>
+            <a href="#team" class="hover:text-blue-400 transition">Team</a>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-6 pt-48 pb-32 space-y-32">
+        
+        <section class="text-center">
+            <div class="inline-block px-4 py-1 border border-slate-800 rounded-full text-slate-500 text-[10px] font-mono mb-6 uppercase tracking-widest">ID: 2427030381</div>
+            <h1 class="text-6xl md:text-7xl font-extrabold mb-8 uppercase leading-tight"><span class="gradient-text uppercase">Predict ovarian cancer using clinical biomarkers + medical images via AI-ML for early detection</span></h1>
+            <p class="text-slate-400 max-w-2xl mx-auto italic text-lg leading-relaxed border-l-2 border-blue-500/30 pl-6 text-left">
+                "Early detection of ovarian cancer can be significantly improved by integrating clinical biomarker data (such as CA-125 levels, age, family history, and hormonal factors) with medical imaging features (ultrasound/CT/MRI) using AI-ML models. 
+            A multimodal machine learning approach that learns patterns jointly from structured clinical parameters and image-based tumor characteristics will achieve higher prediction accuracy, sensitivity, and earlier risk identification compared to models relying on a single data source."
+            </p>
+        </section>
+
+        <section id="problem" class="grid md:grid-cols-2 gap-12 items-stretch">
+            <div class="glass p-10 rounded-[2.5rem] flex flex-col justify-center border-l-4 border-blue-600">
+                <h2 class="text-3xl font-extrabold mb-6">Problem Statement</h2>
+                <p class="text-slate-400 leading-relaxed text-justify">Ovarian cancer (OC), the seventh most common cancer in women and the most lethal gynecological malignancy, is a major global health challenge, with over 324,000 new cases and more than 200,000 deaths reported each year. 
+                    It is often diagnosed at a late stage because early symptoms are vague and difficult to detect. While clinical biomarkers and medical imaging are used for diagnosis, each method alone has limitations in accuracy and early-stage identification.
+
+Although significant research already exists on ovarian cancer detection using AI and medical data, many studies focus on a single type of input, such as only biomarkers or only imaging. 
+This project aims to build a multimodal AI-ML model that combines both clinical biomarker data and medical images to improve prediction accuracy and support earlier, more reliable detection.</p>
+            </div>
+            <div class="space-y-6">
+                <div class="glass p-7 rounded-3xl border-r-4 border-blue-500/50">
+                    <h3 class="text-blue-400 font-bold text-xs uppercase tracking-widest mb-2">Literature Review / Market Research</h3>
+                    <p class="text-sm text-slate-500 italic">Several research studies have explored the use of AI and machine learning for ovarian cancer prediction and diagnosis using clinical biomarkers and imaging data.
+                        <ol>
+                                <li>Zhang et al., 2020: Compared machine learning models such as Random Forest and XGBoost using biomarker data for ovarian cancer prediction and found improved accuracy over traditional statistical methods.</li>
+
+                                <li>Nunes et al., 2021: Integrated clinical and imaging data using deep learning techniques to support diagnosis, showing that combining multiple data types improves performance.</li>
+
+                                <li>Liu et al., 2019: Highlighted the importance of key biomarkers like CA-125, HE4, and other clinical factors in improving ML-based prediction models.</li>
+
+                                <li>Boehm et al., 2022: Developed a multimodal ML approach for risk stratification and used feature importance and image heatmaps to improve interpretability of predictions.</li>
+                        </ol>
+                    </p>
+                </div>
+                <div class="glass p-7 rounded-3xl border-r-4 border-purple-500/50">
+                    <h3 class="text-purple-400 font-bold text-xs uppercase tracking-widest mb-2">Research Gap / Innovation</h3>
+                    <p class="text-sm text-slate-500 italic">While several studies have already combined clinical biomarkers and medical imaging using advanced AI models, most existing approaches rely on highly complex datasets, 
+                        expensive imaging techniques, or research-level deep learning systems that are difficult to implement in real clinical settings. Many models are trained on limited or specialized populations and are not designed for simple, scalable deployment.
+The innovation in this project lies in developing a practical and accessible multimodal AI-ML model that uses commonly available biomarkers (such as CA-125, HE4, and basic clinical factors) along with standard medical images to support early detection. 
+Instead of focusing only on achieving high accuracy in controlled research environments, this approach emphasizes simplicity, interpretability, and potential real-world usability. 
+The project also aims to compare multiple ML techniques and highlight important features contributing to prediction, making the system more transparent and supportive for clinical decision-making.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="methodology" class="space-y-12">
+            <h2 class="text-4xl font-black text-center uppercase tracking-tight">System <span class="text-blue-500">Methodology</span></h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-3xl text-center">
+                    <i class="fas fa-database text-blue-500 text-3xl mb-4"></i>
+                    <h3 class="font-bold mb-2 uppercase text-xs tracking-widest">Dataset / Input</h3>
+                    <p class="text-sm text-slate-500">This project uses publicly available datasets from Kaggle containing clinical biomarker data and histopathology images for ovarian cancer detection.
+
+                    Sources:
+                    Ovarian Cancer Biomarker Dataset (clinical parameters)
+                    Ovarian Cancer Histopathology Image Dataset
+                    Data Files Used:
+                    Supplementary Data 1: Original raw dataset
+                    Supplementary Data 2: List of biomarkers with abbreviations and descriptions
+                    Supplementary Data 3: Imputed training data (without CA72-4 biomarker)
+                    Supplementary Data 4: Raw training data
+                    Supplementary Data 5: Raw test data
+                    Target Column:
+                    TYPE
+                    1 → BOT (Benign Ovarian Tumor)
+                    0 → OC (Ovarian Cancer)
+                    Dataset Size:
+                    Includes multiple patient samples with clinical biomarker readings and labeled histopathology images categorized as benign or malignant.
+                    Preprocessing Steps:
+                    Handling missing values using imputation (as provided in Supplementary Data 3)
+                    Normalization of biomarker values
+                    Feature selection (e.g., CA-125, HE4, clinical indicators)
+                    Image resizing and scaling for model compatibility
+                    Splitting into training and testing datasets</p>
+                </div>
+                <div class="glass p-8 rounded-3xl text-center">
+                    <i class="fas fa-microchip text-purple-500 text-3xl mb-4"></i>
+                    <h3 class="font-bold mb-2 uppercase text-xs tracking-widest">Model / Architecture</h3>
+                    <p class="text-sm text-slate-500">[Algorithms used or System Workflow]A multimodal AI-ML workflow is used to combine clinical data and image-based inputs.
+
+                    For Biomarker Data:
+                    Algorithms: Random Forest, XGBoost, and Logistic Regression
+                    Purpose: Predict cancer risk based on clinical parameters
+                    For Medical Images:
+                    Convolutional Neural Network (CNN) for feature extraction and classification
+                    System Workflow:
+                    Input clinical biomarker values and histopathology images
+                    Preprocess data (cleaning, normalization, resizing images)
+                    Train ML models on biomarker data
+                    Train CNN on image dat
+                    Combine outputs for final prediction
+                    Classify result as OC (0) or BOT (1)</p>
+                </div>
+                <div class="glass p-8 rounded-3xl text-center border-2 border-green-500/20 bg-green-500/5">
+                    <i class="fab fa-python text-green-500 text-3xl mb-4"></i>
+                    <h3 class="font-bold mb-4 uppercase text-xs tracking-widest text-green-400">Live Execution</h3>
+                    <a href="[LINK]" target="_blank" class="px-6 py-2 bg-green-600 rounded-full text-[10px] font-black hover:bg-green-500 transition shadow-lg shadow-green-900/40">VIEW CODE / DEMO</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="results" class="glass p-12 rounded-[3.5rem] border-t-4 border-blue-500">
+            <h2 class="text-3xl font-black mb-12 text-center uppercase tracking-tight">Results & <span class="text-blue-500">Analysis</span></h2>
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="h-80"><canvas id="resultsChart"></canvas></div>
+                <div class="space-y-6">
+                    <div class="p-6 rounded-2xl bg-white/5 flex justify-between items-center border border-white/10 shadow-inner">
+                        <span class="text-slate-400 font-bold uppercase text-xs tracking-widest">Accuracy / Performance</span>
+                        <span class="text-blue-400 font-mono font-black text-3xl">XX.X%</span>
+                    </div>
+                    <p class="text-slate-500 text-sm italic text-justify leading-relaxed">Quantifiable outcomes and evaluation metrics compared to baselines.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="text-center pt-10 border-t border-slate-900">
+            <h2 class="text-[10px] font-black text-slate-600 uppercase tracking-[0.5em] mb-12">Academic Credits</h2>
+            <div class="flex flex-wrap justify-center gap-10">
+                <div class="glass px-12 py-8 rounded-[2rem] border-b-4 border-blue-600">
+                    <p class="text-[9px] font-bold text-blue-500 mb-2 uppercase tracking-widest">Project Guide</p>
+                    <p class="font-black text-xl text-slate-100">Dr. Jay Prakash Singh</p>
+                </div>
+                <div class="glass px-12 py-8 rounded-[2rem] border-b-4 border-slate-700">
+                    <p class="text-[9px] font-bold text-slate-400 mb-2 uppercase tracking-widest">Team Member</p>
+                    <p class="font-black text-xl text-slate-100">Ananya Kawatra</p>
+                    <p class="text-[10px] text-slate-500 mt-1">2427030381</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 text-center bg-black/40 border-t border-slate-900">
+        <p class="text-slate-600 text-[10px] font-bold tracking-[0.3em] uppercase mb-2">Manipal University Jaipur</p>
+        <p class="text-slate-500 text-[9px] font-medium tracking-[0.2em] uppercase opacity-50">Department of Computer Science & Engineering • 2026</p>
+    </footer>
+
+    <script>
+        // TIMER LOGIC
+        let sec = 0;
+        let timer = null;
+        function startTimer() {
+            timer = setInterval(() => {
+                sec++;
+                let m = Math.floor(sec / 60);
+                let s = sec % 60;
+                document.getElementById('displayTime').innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+                
+                if (sec >= 480 && sec < 600) { // 8-10 Mins Warning
+                    document.getElementById('timerContainer').classList.add('timer-warning');
+                    document.getElementById('timerIcon').classList.replace('fa-hourglass-start', 'fa-hourglass-half');
+                } else if (sec >= 600) { // 10 Mins Stop
+                    clearInterval(timer);
+                    document.getElementById('timerContainer').classList.replace('timer-warning', 'timer-stop');
+                    document.getElementById('displayTime').innerText = "10:00";
+                    document.getElementById('timerIcon').classList.replace('fa-hourglass-half', 'fa-hourglass-end');
+                }
+            }, 1000);
+        }
+
+        // RESULTS CHART (Demo Data)
+        const ctx = document.getElementById('resultsChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Existing System', 'Our Solution'],
+                datasets: [{
+                    data: [70, 92],
+                    backgroundColor: ['#1e293b', '#3b82f6'],
+                    borderRadius: 15,
+                    barThickness: 50
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: { 
+                    y: { beginAtZero: true, grid: { color: '#ffffff05' }, ticks: { color: '#475569' } },
+                    x: { grid: { display: false }, ticks: { color: '#475569' } }
+                }
+            }
+        });
+    </script>
+</body>
+>>>>>>> 453de8fc04caafec1d9bd80d05f8800994b61de5
+</html>
