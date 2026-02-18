@@ -18,6 +18,7 @@
         @keyframes flicker { 0%, 100% { background-color: #ffffff; } 50% { background-color: #fca5a5; } }
         .timer-warning { animation: flicker 1s infinite; border: 3px solid #ef4444 !important; color: #b91c1c !important; }
         .timer-stop { background-color: #991b1b !important; color: #ffffff !important; border: 3px solid #f87171 !important; animation: none; }
+
     </style>
 </head>
 <body onload="startTimer()">
@@ -57,36 +58,83 @@
         </section>
 
         <section id="problem" class="grid md:grid-cols-2 gap-12 items-stretch">
-            <div class="glass p-10 rounded-[2.5rem] flex flex-col justify-center border-l-4 border-blue-600">
+            <div class="glass p-10 rounded-[2.5rem] flex flex-col justify-center border-l-4 border-blue-600 space-y-6">
                 <h2 class="text-3xl font-extrabold mb-6">Problem Statement</h2>
-                <p class="text-slate-400 leading-relaxed text-justify">Ovarian cancer (OC), the seventh most common cancer in women and the most lethal gynecological malignancy, is a major global health challenge, with over 324,000 new cases and more than 200,000 deaths reported each year. 
-                    It is often diagnosed at a late stage because early symptoms are vague and difficult to detect. While clinical biomarkers and medical imaging are used for diagnosis, each method alone has limitations in accuracy and early-stage identification.
-
-Although significant research already exists on ovarian cancer detection using AI and medical data, many studies focus on a single type of input, such as only biomarkers or only imaging. 
-This project aims to build a multimodal AI-ML model that combines both clinical biomarker data and medical images to improve prediction accuracy and support earlier, more reliable detection.</p>
+                <p class="text-slate-400 leading-relaxed text-justify">India holds the second position worldwide in annual new ovarian cancer cases, contributing nearly 15% of the global burden, it is a major global health challenge, with over 324,000 new cases and more than 200,000 deaths reported each year. 
+                    It is often diagnosed at a late stage because early symptoms are vague and difficult to detect making it the 3rd most lethal cancer in women. While clinical biomarkers and medical imaging are used for diagnosis, each method alone has limitations in accuracy and early-stage identification.
+                </p>
+                
+                <p class="text-slate-400 leading-relaxed text-justify">
+                    Although significant research already exists on ovarian cancer detection using AI and medical data, many studies focus on a single type of input, such as only biomarkers or only imaging. 
+                    This project aims to build a multimodal AI-ML model that combines both clinical biomarker data and medical images to improve prediction accuracy and support earlier, more reliable detection.
+                </p>
             </div>
             <div class="space-y-6">
                 <div class="glass p-7 rounded-3xl border-r-4 border-blue-500/50">
                     <h3 class="text-blue-400 font-bold text-xs uppercase tracking-widest mb-2">Literature Review / Market Research</h3>
-                    <p class="text-sm text-slate-500 italic">Several research studies have explored the use of AI and machine learning for ovarian cancer prediction and diagnosis using clinical biomarkers and imaging data.
-                        <ol>
-                                <li>Zhang et al., 2020: Compared machine learning models such as Random Forest and XGBoost using biomarker data for ovarian cancer prediction and found improved accuracy over traditional statistical methods.</li>
-
-                                <li>Nunes et al., 2021: Integrated clinical and imaging data using deep learning techniques to support diagnosis, showing that combining multiple data types improves performance.</li>
-
-                                <li>Liu et al., 2019: Highlighted the importance of key biomarkers like CA-125, HE4, and other clinical factors in improving ML-based prediction models.</li>
-
-                                <li>Boehm et al., 2022: Developed a multimodal ML approach for risk stratification and used feature importance and image heatmaps to improve interpretability of predictions.</li>
+                    <p class="text-sm text-slate-500 italic">
+                        <ol class="space-y-4">
+                                <li class="text-slate-300 glass p-6 rounded-2xl border-l-4 border-blue-500 hover:border-blue-400 transition-colors">
+                                        <strong class="text-slate-400">Liu et al., 2019:</strong> Highlighted the importance of key biomarkers like CA-125, HE4, and other clinical factors in improving ML-based prediction models.
+                                </li>
+                                <li class="text-slate-300 glass p-6 rounded-2xl border-l-4 border-blue-500 hover:border-blue-400 transition-colors">
+                                        <strong class="text-slate-400">Zhang et al., 2020:</strong> Compared machine learning models such as Random Forest and XGBoost using biomarker data for ovarian cancer prediction and found improved accuracy over traditional statistical methods.
+                                </li>
+                                <li class="text-slate-300 glass p-6 rounded-2xl border-l-4 border-blue-500 hover:border-blue-400 transition-colors">
+                                        <strong class="text-slate-400">Nunes et al., 2021:</strong> Integrated clinical and imaging data using deep learning techniques to support diagnosis, showing that combining multiple data types improves performance.
+                                </li>
+                                <li class="text-slate-300 glass p-6 rounded-2xl border-l-4 border-blue-500 hover:border-blue-400 transition-colors">
+                                        <strong class="text-slate-400">Boehm et al., 2022:</strong> Developed a multimodal ML approach for risk stratification and used feature importance and image heatmaps to improve interpretability of predictions.
+                                </li>
                         </ol>
                     </p>
                 </div>
                 <div class="glass p-7 rounded-3xl border-r-4 border-purple-500/50">
-                    <h3 class="text-purple-400 font-bold text-xs uppercase tracking-widest mb-2">Research Gap / Innovation</h3>
-                    <p class="text-sm text-slate-500 italic">While several studies have already combined clinical biomarkers and medical imaging using advanced AI models, most existing approaches rely on highly complex datasets, 
-                        expensive imaging techniques, or research-level deep learning systems that are difficult to implement in real clinical settings. Many models are trained on limited or specialized populations and are not designed for simple, scalable deployment.
-The innovation in this project lies in developing a practical and accessible multimodal AI-ML model that uses commonly available biomarkers (such as CA-125, HE4, and basic clinical factors) along with standard medical images to support early detection. 
-Instead of focusing only on achieving high accuracy in controlled research environments, this approach emphasizes simplicity, interpretability, and potential real-world usability. 
-The project also aims to compare multiple ML techniques and highlight important features contributing to prediction, making the system more transparent and supportive for clinical decision-making.</p>
+                    <h3 class="text-purple-400 font-bold text-xs uppercase tracking-widest mb-4">Research Gap / Innovation</h3>
+                    <div class="space-y-6">
+                        <div class="glass p-4 rounded-xl border border-purple-500/20">
+                            <h4 class="text-purple-300 font-semibold text-sm mb-3 uppercase tracking-wide">Research Gap</h4>
+                            <ul class="space-y-2 text-sm text-slate-400">
+                                <li class="flex items-start">
+                                    <i class="fas fa-exclamation-triangle text-red-400 mt-0.5 mr-3 text-xs"></i>
+                                    Most existing approaches rely on highly complex datasets and expensive imaging techniques
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-exclamation-triangle text-red-400 mt-0.5 mr-3 text-xs"></i>
+                                    Research-level deep learning systems are difficult to implement in real clinical settings
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-exclamation-triangle text-red-400 mt-0.5 mr-3 text-xs"></i>
+                                    Many models are trained on limited or specialized populations
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-exclamation-triangle text-red-400 mt-0.5 mr-3 text-xs"></i>
+                                    Current solutions are not designed for simple, scalable deployment
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="glass p-4 rounded-xl border border-purple-500/20">
+                            <h4 class="text-purple-300 font-semibold text-sm mb-3 uppercase tracking-wide">Innovation</h4>
+                            <ul class="space-y-2 text-sm text-slate-400">
+                                <li class="flex items-start">
+                                    <i class="fas fa-lightbulb text-yellow-400 mt-0.5 mr-3 text-xs"></i>
+                                    Practical and accessible multimodal AI-ML model using commonly available biomarkers
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-lightbulb text-yellow-400 mt-0.5 mr-3 text-xs"></i>
+                                    Emphasizes simplicity, interpretability, and real-world usability
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-lightbulb text-yellow-400 mt-0.5 mr-3 text-xs"></i>
+                                    Compares multiple ML techniques for comprehensive evaluation
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-lightbulb text-yellow-400 mt-0.5 mr-3 text-xs"></i>
+                                    Highlights important features for transparent clinical decision-making
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -97,47 +145,66 @@ The project also aims to compare multiple ML techniques and highlight important 
                 <div class="glass p-8 rounded-3xl text-center">
                     <i class="fas fa-database text-blue-500 text-3xl mb-4"></i>
                     <h3 class="font-bold mb-2 uppercase text-xs tracking-widest">Dataset / Input</h3>
-                    <p class="text-sm text-slate-500">This project uses publicly available datasets from Kaggle containing clinical biomarker data and histopathology images for ovarian cancer detection.
-
-                    Sources:
-                    Ovarian Cancer Biomarker Dataset (clinical parameters)
-                    Ovarian Cancer Histopathology Image Dataset
-                    Data Files Used:
-                    Supplementary Data 1: Original raw dataset
-                    Supplementary Data 2: List of biomarkers with abbreviations and descriptions
-                    Supplementary Data 3: Imputed training data (without CA72-4 biomarker)
-                    Supplementary Data 4: Raw training data
-                    Supplementary Data 5: Raw test data
-                    Target Column:
-                    TYPE
-                    1 → BOT (Benign Ovarian Tumor)
-                    0 → OC (Ovarian Cancer)
-                    Dataset Size:
-                    Includes multiple patient samples with clinical biomarker readings and labeled histopathology images categorized as benign or malignant.
-                    Preprocessing Steps:
-                    Handling missing values using imputation (as provided in Supplementary Data 3)
-                    Normalization of biomarker values
-                    Feature selection (e.g., CA-125, HE4, clinical indicators)
-                    Image resizing and scaling for model compatibility
-                    Splitting into training and testing datasets</p>
+                    <p class="text-sm text-slate-500 mb-4">This project uses publicly available datasets from Kaggle:</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="text-slate-400 text-sm flex items-center">
+                            <i class="fas fa-circle text-blue-500 text-xs mr-3"></i>
+                            Ovarian Cancer Biomarker Dataset (clinical parameters)
+                        </li>
+                        <li class="text-slate-400 text-sm flex items-center">
+                            <i class="fas fa-circle text-blue-500 text-xs mr-3"></i>
+                            Ovarian Cancer Histopathology Image Dataset
+                        </li>
+                    </ul>
+                    <p class="text-sm text-slate-500 mb-3 font-semibold">Data Files Used:</p>
+                    <div class="space-y-2">
+                        <div class="glass p-3 rounded-lg border border-blue-500/10 hover:border-blue-400/30 transition-colors">
+                            <span class="text-blue-300 font-semibold text-xs">Supplementary Data 1:</span> <span class="text-slate-400 text-sm">Original raw dataset</span>
+                        </div>
+                        <div class="glass p-3 rounded-lg border border-blue-500/10 hover:border-blue-400/30 transition-colors">
+                            <span class="text-blue-300 font-semibold text-xs">Supplementary Data 2:</span> <span class="text-slate-400 text-sm">List of biomarkers with abbreviations and descriptions</span>
+                        </div>
+                        <div class="glass p-3 rounded-lg border border-blue-500/10 hover:border-blue-400/30 transition-colors">
+                            <span class="text-blue-300 font-semibold text-xs">Supplementary Data 3:</span> <span class="text-slate-400 text-sm">Imputed training data (without CA72-4 biomarker)</span>
+                        </div>
+                        <div class="glass p-3 rounded-lg border border-blue-500/10 hover:border-blue-400/30 transition-colors">
+                            <span class="text-blue-300 font-semibold text-xs">Supplementary Data 4:</span> <span class="text-slate-400 text-sm">Raw training data</span>
+                        </div>
+                        <div class="glass p-3 rounded-lg border border-blue-500/10 hover:border-blue-400/30 transition-colors">
+                            <span class="text-blue-300 font-semibold text-xs">Supplementary Data 5:</span> <span class="text-slate-400 text-sm">Raw test data</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="glass p-8 rounded-3xl text-center">
                     <i class="fas fa-microchip text-purple-500 text-3xl mb-4"></i>
                     <h3 class="font-bold mb-2 uppercase text-xs tracking-widest">Model / Architecture</h3>
-                    <p class="text-sm text-slate-500">[Algorithms used or System Workflow]A multimodal AI-ML workflow is used to combine clinical data and image-based inputs.
-
-                    For Biomarker Data:
-                    Algorithms: Random Forest, XGBoost, and Logistic Regression
-                    Purpose: Predict cancer risk based on clinical parameters
-                    For Medical Images:
-                    Convolutional Neural Network (CNN) for feature extraction and classification
-                    System Workflow:
-                    Input clinical biomarker values and histopathology images
-                    Preprocess data (cleaning, normalization, resizing images)
-                    Train ML models on biomarker data
-                    Train CNN on image dat
-                    Combine outputs for final prediction
-                    Classify result as OC (0) or BOT (1)</p>
+                    <p class="text-sm text-slate-500">A multimodal AI-ML workflow is used to combine clinical data and image-based inputs.</p>
+                    <div class="mt-6 space-y-4">
+                        <div class="glass p-6 rounded-2xl border border-purple-500/20">
+                            <h4 class="font-semibold text-purple-300 mb-4 uppercase text-xs tracking-widest">For Biomarker Data</h4>
+                            <div class="space-y-3">
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                                    <strong class="text-slate-300 text-sm">Algorithms:</strong>
+                                    <span class="text-slate-400 text-sm">Random Forest, XGBoost, and Logistic Regression</span>
+                                </div>
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                                    <strong class="text-slate-300 text-sm">Purpose:</strong>
+                                    <span class="text-slate-400 text-sm">Predict cancer risk based on clinical parameters</span>
+                                </div>
+                                <div>
+                                    <strong class="text-slate-300 text-sm block mb-2">System Workflow:</strong>
+                                    <ol class="list-decimal list-inside space-y-1 text-slate-400 text-sm ml-4">
+                                        <li>Input clinical biomarker values and histopathology images</li>
+                                        <li>Preprocess data (cleaning, normalization, resizing images)</li>
+                                        <li>Train ML models on biomarker data</li>
+                                        <li>Train CNN on image data</li>
+                                        <li>Combine outputs for final prediction</li>
+                                        <li>Classify result as OC (0) or BOT (1)</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="glass p-8 rounded-3xl text-center border-2 border-green-500/20 bg-green-500/5">
                     <i class="fab fa-python text-green-500 text-3xl mb-4"></i>
@@ -154,7 +221,7 @@ The project also aims to compare multiple ML techniques and highlight important 
                 <div class="space-y-6">
                     <div class="p-6 rounded-2xl bg-white/5 flex justify-between items-center border border-white/10 shadow-inner">
                         <span class="text-slate-400 font-bold uppercase text-xs tracking-widest">Accuracy / Performance</span>
-                        <span class="text-blue-400 font-mono font-black text-3xl">XX.X%</span>
+                        <span class="text-blue-400 font-mono font-black text-3xl">83.09%</span>
                     </div>
                     <p class="text-slate-500 text-sm italic text-justify leading-relaxed">Quantifiable outcomes and evaluation metrics compared to baselines.</p>
                 </div>
@@ -212,7 +279,7 @@ The project also aims to compare multiple ML techniques and highlight important 
             data: {
                 labels: ['Existing System', 'Our Solution'],
                 datasets: [{
-                    data: [70, 92],
+                    data: [90, 83],
                     backgroundColor: ['#1e293b', '#3b82f6'],
                     borderRadius: 15,
                     barThickness: 50
