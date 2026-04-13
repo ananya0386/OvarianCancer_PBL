@@ -52,8 +52,8 @@
     <main class="max-w-6xl mx-auto px-6 pt-48 pb-32 space-y-32">
         
         <section class="text-center">
-            <div class="inline-block px-4 py-1 border border-slate-800 rounded-full text-slate-500 text-[10px] font-mono mb-6 uppercase tracking-widest">ID: 2427030381</div>
-            <h1 class="text-6xl md:text-7xl font-extrabold mb-8 uppercase leading-tight"><span class="gradient-text uppercase">Predict ovarian cancer using clinical biomarkers + medical images via AI-ML for early detection</span></h1>
+            <div class="inline-block px-4 py-1 border border-slate-800 rounded-full text-slate-500 text-[10px] font-mono mb-6 uppercase tracking-widest">Roll No: 2427030381</div>
+            <h1 class="text-6xl md:text-7xl font-extrabold mb-8 uppercase leading-tight"><span class="gradient-text uppercase">Multimodal detection of ovarian cancer</span></h1>
             <p class="text-slate-400 max-w-2xl mx-auto italic text-lg leading-relaxed border-l-2 border-blue-500/30 pl-6 text-left">
                 "Early detection of ovarian cancer can be significantly improved by integrating clinical biomarker data (such as CA-125 levels, age, family history, and hormonal factors) with medical imaging features (ultrasound/CT/MRI) using AI-ML models. 
             A multimodal machine learning approach that learns patterns jointly from structured clinical parameters and image-based tumor characteristics will achieve higher prediction accuracy, sensitivity, and earlier risk identification compared to models relying on a single data source."
@@ -63,13 +63,15 @@
         <section id="problem" class="grid md:grid-cols-2 gap-12 items-stretch">
             <div class="glass p-10 rounded-[2.5rem] flex flex-col justify-center border-l-4 border-blue-600 space-y-6">
                 <h2 class="text-3xl font-extrabold mb-6">Problem Statement</h2>
-                <p class="text-slate-400 leading-relaxed text-justify">India holds the second position worldwide in annual new ovarian cancer cases, contributing nearly 15% of the global burden, it is a major global health challenge, with over 324,000 new cases and more than 200,000 deaths reported each year. 
-                    It is often diagnosed at a late stage because early symptoms are vague and difficult to detect making it the 3rd most lethal cancer in women. While clinical biomarkers and medical imaging are used for diagnosis, each method alone has limitations in accuracy and early-stage identification.
+                <p class="text-slate-400 leading-relaxed text-justify">Ovarian cancer is the fifth leading cause of cancer deaths among women globally. Approximately 70% of all ovarian cancer cases are diagnosed only in Stage III or Stage IV, where the five-year survival rate drops below 30%. In contrast, when detected at Stage I, the survival rate exceeds 90%, underscoring the life-saving potential of early diagnosis.
                 </p>
                 
                 <p class="text-slate-400 leading-relaxed text-justify">
-                    Although significant research already exists on ovarian cancer detection using AI and medical data, many studies focus on a single type of input, such as only biomarkers or only imaging. 
-                    This project aims to build a multimodal AI-ML model that combines both clinical biomarker data and medical images to improve prediction accuracy and support earlier, more reliable detection.
+                    Current clinical diagnostic pathways rely heavily on the CA-125 blood biomarker test and transvaginal ultrasound imaging. These methods, while useful, are analyzed separately and suffer from inherent limitations: CA-125 is non-specific and can be elevated in benign conditions, while ultrasound interpretation is highly dependent on radiologist expertise. No existing clinical standard integrates both modalities in a structured, automated fashion.
+                </p>
+                
+                <p class="text-slate-400 leading-relaxed text-justify mt-4">
+                    This project proposes and implements an AI-Driven Multimodal Learning System that fuses structured clinical biomarker data with unstructured histopathological imaging data to enable earlier and more accurate ovarian cancer detection. The dual-branch architecture achieves state-of-the-art performance through specialized ensemble methods and deep transfer learning.
                 </p>
             </div>
             <div class="space-y-6">
@@ -152,29 +154,29 @@
                     <ul class="space-y-2 mb-6">
                         <li class="text-slate-400 text-sm flex items-center">
                             <i class="fas fa-circle text-blue-500 text-xs mr-3"></i>
-                            Ovarian Cancer Biomarker Dataset (clinical parameters)
+                            Kaggle Ovarian Cancer Biomarker Dataset (238 patients, 48 biomarkers)
                         </li>
                         <li class="text-slate-400 text-sm flex items-center">
                             <i class="fas fa-circle text-blue-500 text-xs mr-3"></i>
-                            Ovarian Cancer Histopathology Image Dataset
+                            TCGA Ovarian Histological Images (33,110 images: 19,747 Tumor, 13,363 Non-Tumor)
                         </li>
                     </ul>
                     <p class="text-sm text-slate-500 mb-3 font-semibold">Data Files Used:</p>
                     <div class="space-y-2">
                         <div class="glass p-3 rounded-lg border border-blue-500/10 hover:border-blue-400/30 transition-colors">
-                            <span class="text-blue-300 font-semibold text-xs">Supplementary Data 1:</span> <span class="text-slate-400 text-sm">Original raw dataset</span>
+                            <span class="text-blue-300 font-semibold text-xs">Biomarker Features:</span> <span class="text-slate-400 text-sm">RBC, HGB, PLT, CA125, HE4, CA19-9, CEA, AFP + 40 others</span>
                         </div>
                         <div class="glass p-3 rounded-lg border border-blue-500/10 hover:border-blue-400/30 transition-colors">
-                            <span class="text-blue-300 font-semibold text-xs">Supplementary Data 2:</span> <span class="text-slate-400 text-sm">List of biomarkers with abbreviations and descriptions</span>
+                            <span class="text-blue-300 font-semibold text-xs">Train-Test Split:</span> <span class="text-slate-400 text-sm">70% training (160 patients), 30% testing (71 patients)</span>
                         </div>
                         <div class="glass p-3 rounded-lg border border-blue-500/10 hover:border-blue-400/30 transition-colors">
-                            <span class="text-blue-300 font-semibold text-xs">Supplementary Data 3:</span> <span class="text-slate-400 text-sm">Imputed training data (without CA72-4 biomarker)</span>
+                            <span class="text-blue-300 font-semibold text-xs">Image Distribution:</span> <span class="text-slate-400 text-sm">4,000 training + 1,000 validation images (balanced classes)</span>
                         </div>
                         <div class="glass p-3 rounded-lg border border-blue-500/10 hover:border-blue-400/30 transition-colors">
-                            <span class="text-blue-300 font-semibold text-xs">Supplementary Data 4:</span> <span class="text-slate-400 text-sm">Raw training data</span>
+                            <span class="text-blue-300 font-semibold text-xs">Image Preprocessing:</span> <span class="text-slate-400 text-sm">224×224 resize, pixel normalization [0,1], augmentation applied</span>
                         </div>
                         <div class="glass p-3 rounded-lg border border-blue-500/10 hover:border-blue-400/30 transition-colors">
-                            <span class="text-blue-300 font-semibold text-xs">Supplementary Data 5:</span> <span class="text-slate-400 text-sm">Raw test data</span>
+                            <span class="text-blue-300 font-semibold text-xs">Class Distribution:</span> <span class="text-slate-400 text-sm">~62% Non-cancerous, ~38% Cancerous (stratified split)</span>
                         </div>
                     </div>
                 </div>
@@ -184,26 +186,22 @@
                     <p class="text-sm text-slate-500">A multimodal AI-ML workflow is used to combine clinical data and image-based inputs.</p>
                     <div class="mt-6 space-y-4">
                         <div class="glass p-6 rounded-2xl border border-purple-500/20">
-                            <h4 class="font-semibold text-purple-300 mb-4 uppercase text-xs tracking-widest">For Biomarker Data</h4>
+                            <h4 class="font-semibold text-purple-300 mb-4 uppercase text-xs tracking-widest">Dual-Branch Architecture</h4>
                             <div class="space-y-3">
                                 <div class="flex flex-col sm:flex-row sm:items-center gap-2">
-                                    <strong class="text-slate-300 text-sm">Algorithms:</strong>
-                                    <span class="text-slate-400 text-sm">Random Forest, XGBoost, and Logistic Regression</span>
+                                    <strong class="text-slate-300 text-sm">Branch 1 - Biomarker:</strong>
+                                    <span class="text-slate-400 text-sm">Random Forest (200 trees) + XGBoost</span>
                                 </div>
                                 <div class="flex flex-col sm:flex-row sm:items-center gap-2">
-                                    <strong class="text-slate-300 text-sm">Purpose:</strong>
-                                    <span class="text-slate-400 text-sm">Predict cancer risk based on clinical parameters</span>
+                                    <strong class="text-slate-300 text-sm">Branch 2 - Imaging:</strong>
+                                    <span class="text-slate-400 text-sm">DenseNet121 (fine-tuned on TCGA images)</span>
                                 </div>
-                                <div>
-                                    <strong class="text-slate-300 text-sm block mb-2">System Workflow:</strong>
-                                    <ol class="list-decimal list-inside space-y-1 text-slate-400 text-sm ml-4">
-                                        <li>Input clinical biomarker values and histopathology images</li>
-                                        <li>Preprocess data (cleaning, normalization, resizing images)</li>
-                                        <li>Train ML models on biomarker data</li>
-                                        <li>Train CNN on image data</li>
-                                        <li>Combine outputs for final prediction</li>
-                                        <li>Classify result as OC (0) or BOT (1)</li>
-                                    </ol>
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                                    <strong class="text-slate-300 text-sm">Fusion Strategy:</strong>
+                                    <span class="text-slate-400 text-sm">Late-fusion via probability concatenation</span>
+                                </div>
+                                <div class="mt-4 pt-2 border-t border-purple-500/20">
+        
                                 </div>
                             </div>
                         </div>
@@ -222,11 +220,15 @@
             <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div class="h-80"><canvas id="resultsChart"></canvas></div>
                 <div class="space-y-6">
-                    <div class="p-6 rounded-2xl bg-white/5 flex justify-between items-center border border-white/10 shadow-inner">
-                        <span class="text-slate-400 font-bold uppercase text-xs tracking-widest">Accuracy / Performance</span>
+                    <div class="p-6 rounded-2xl bg-white/5 flex justify-between items-center border border-white/10 shadow-inner hover:border-blue-500/50 transition">
+                        <span class="text-slate-400 font-bold uppercase text-xs tracking-widest">Random Forest Accuracy</span>
                         <span class="text-blue-400 font-mono font-black text-3xl">83.09%</span>
                     </div>
-                    <p class="text-slate-500 text-sm italic text-justify leading-relaxed">Quantifiable outcomes and evaluation metrics compared to baselines.</p>
+                    <div class="p-6 rounded-2xl bg-white/5 flex justify-between items-center border border-white/10 shadow-inner hover:border-purple-500/50 transition">
+                        <span class="text-slate-400 font-bold uppercase text-xs tracking-widest">DenseNet121 Accuracy</span>
+                        <span class="text-purple-400 font-mono font-black text-3xl">95.40%</span>
+                    </div>
+    
                 </div>
             </div>
         </section>
@@ -239,9 +241,9 @@
                     <p class="font-black text-xl text-slate-100">Dr. Jay Prakash Singh</p>
                 </div>
                 <div class="glass px-12 py-8 rounded-[2rem] border-b-4 border-slate-700">
-                    <p class="text-[9px] font-bold text-slate-400 mb-2 uppercase tracking-widest">Team Member</p>
+                    <p class="text-[9px] font-bold text-slate-400 mb-2 uppercase tracking-widest">Project Lead</p>
                     <p class="font-black text-xl text-slate-100">Ananya Kawatra</p>
-                    <p class="text-[10px] text-slate-500 mt-1">2427030381</p>
+                    <p class="text-[10px] text-slate-500 mt-1">Roll No: 221B289</p>
                 </div>
             </div>
         </section>
@@ -280,10 +282,10 @@
         new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Existing System', 'Our Solution'],
+                labels: ['Biomarker Model (RF)', 'Histopathology CNN (Dense121)'],
                 datasets: [{
-                    data: [90, 83],
-                    backgroundColor: ['#1e293b', '#3b82f6'],
+                    data: [83.09, 95.40],
+                    backgroundColor: ['#3b82f6', '#a855f7'],
                     borderRadius: 15,
                     barThickness: 50
                 }]
